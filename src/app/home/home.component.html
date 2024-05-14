@@ -1,0 +1,27 @@
+<div class="row h-75 mb-1" style="background-color: #fff5da;">
+    <h3 class="m-auto p-auto">Все доски</h3>
+    <div class="row" style="width: 1559px; overflow-y: auto; height: 90% !important;">
+        <ng-container  *ngFor="let item of desks; let i = index;">
+            <div class="col-3  h-50">
+                <app-home-desks [desk]="desks[i]"></app-home-desks>
+            </div>
+            <div class="col-3  h-50">
+                <app-home-desks [desk]="desks[i]"></app-home-desks>
+            </div>
+            <div class="col-3  h-50">
+                <app-home-desks [desk]="desks[i]"></app-home-desks>
+            </div>
+            <div class="col-3  h-50">
+                <app-home-desks [desk]="desks[i]"></app-home-desks>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div class="row h-25" style="background-color: #e6ddc4;">
+    <h3 class="m-auto p-auto">Срочные задачи</h3>
+    <ng-container  *ngFor="let item of tasks; let i = index">
+        <div class="col-6">
+            <app-home-tasks [task]="tasks[i]"></app-home-tasks>
+        </div>
+    </ng-container>
+</div>

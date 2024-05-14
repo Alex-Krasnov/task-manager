@@ -1,0 +1,19 @@
+<main class="form-signin w-100 m-auto mt-5">
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <img class="mb-4" src="favicon.ico" width="48" height="48">
+    <h1 class="h5 mb-3 fw-normal">Пожалуйста, авторизуйтесь</h1>
+    <br>
+    <div *ngIf="invalidLogin" class="alert alert-danger">Неверный логин или пароль.</div>
+    <br *ngIf="invalidLogin"/>
+    <div class="form-floating">
+      <input type="text" class="form-control" placeholder="Логин" name="username" [(ngModel)]="credentials.username">
+      <label for="floatingInput">Логин</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" placeholder="Пароль" name="password" [(ngModel)]="credentials.password">
+      <label for="floatingPassword">Пароль</label>
+    </div>
+    <br>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">Войти</button>
+  </form>
+</main>

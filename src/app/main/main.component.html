@@ -1,0 +1,61 @@
+<div class="row h-100 m-0 p-0" style="background-color: black;">
+    <div class="col-auto m-0 pe-1">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100" style="width: 250px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-4">Task Manager</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page">
+                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                    Home
+                </a>
+                </li>
+                <li>
+                <a class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                    Dashboard
+                </a>
+                </li>
+                <li>
+                <a class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                    Orders
+                </a>
+                </li>
+                <li>
+                <a class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                    Products
+                </a>
+                </li>
+                <li>
+                <a class="nav-link link-body-emphasis">
+                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                    Customers
+                </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a class="d-flex align-items-center link-body-emphasis text-decoration-none">
+                <svg class="me-2" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                    <g id="SVGRepo_iconCarrier">
+                        <circle cx="12" cy="9" r="3" stroke="#1C274C" stroke-width="1.5"/>
+                        <path d="M17.9691 20C17.81 17.1085 16.9247 15 11.9999 15C7.07521 15 6.18991 17.1085 6.03076 20" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    </g>
+                </svg>
+                <strong>User User</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col h-100 w-75">
+        <router-outlet></router-outlet>
+    </div>
+</div>
