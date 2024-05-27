@@ -14,6 +14,8 @@ import { HomeService } from './services/home.service';
 import { HomeComponent } from './home/home.component';
 import { HomeDesksComponent } from './home-desks/home-desks.component';
 import { HomeTasksComponent } from './home-tasks/home-tasks.component';
+import { DeskComponent } from './desk/desk.component';
+import { TaskComponent } from './task/task.component';
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -26,7 +28,9 @@ export function tokenGetter() {
     MainComponent,
     HomeComponent,
     HomeDesksComponent,
-    HomeTasksComponent
+    HomeTasksComponent,
+    DeskComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,

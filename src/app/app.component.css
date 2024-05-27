@@ -1,0 +1,25 @@
+.visibleDropdown{
+    display: block;
+}
+
+.fontw{
+    font-weight: 600!important;
+}
+
+.form-control{
+    font-weight: 600;
+}
+
+input.ng-touched.ng-invalid{
+    border-color: red;
+    border-width: 2px;
+}
+
+input.ng-dirty{
+    border-color: rgb(9, 212, 2);
+    border-width: 2px;
+}
+
+.border {
+    border: var(--bs-border-width) var(--bs-border-style) #e6ddc4 !important;
+}
