@@ -1,0 +1,59 @@
+<form style="width: 1000px;" class="mx-auto modal-content p-1" [formGroup]="taskForm">
+    <label>Место регистрации</label>
+    <div class="row border m-1">
+        <div class="row mt-1">
+            <div class="col-xl-2">
+                <label class="mt-2">Название</label>
+            </div>
+            <div class="col-xl">
+                <input type="text" class="form-control" placeholder="Название" formControlName="task_name">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-xl-2">
+                <label class="mt-2">Дата создания</label>
+            </div>
+            <div class="col-xl">
+                <input type="date" class="form-control" placeholder="Дата создания" formControlName="creation_date">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-xl-2">
+                <label class="mt-2">Крайний срок</label>
+            </div>
+            <div class="col-xl">
+                <input type="date" class="form-control" placeholder="Крайний срок" formControlName="deadline">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-xl-2">
+                <label class="mt-2">Описание</label>
+            </div>
+            <div class="col-xl">
+                <textarea class="form-control" rows="2" formControlName="description"></textarea>
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-xl">
+                <label class="mt-2">Исполнители:</label>
+            </div>
+        </div>
+        <div formArrayName="userList">
+            <div *ngFor="let item of userList.controls; let i = index" class="row mt-1 mx-auto"  [formGroupName]="i">
+                <div class="col-xl mx-auto">
+                    <input type="text" class="form-control" list="list" formControlName="name">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-1 mx-auto">
+            <div class="col-xl mx-auto">
+                <input type="text" class="form-control" placeholder="new usr" list="list" formControlName="newName">
+            </div>
+        </div>
+        <div class="row m-2">
+            <button class="btn btn-outline-success" (click)="saveExit()">Сохранить</button>
+        </div>
+    </div>
+</form>
+
+<datalist id="list"><option *ngFor="let item of listUsr" [value]="item.name"></option></datalist> 

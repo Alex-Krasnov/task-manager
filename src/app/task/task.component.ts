@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TaskDeskModel } from '../_interfaces/task-desk.model';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { TaskService } from '../services/task.service';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'app-task',
@@ -11,12 +11,12 @@ import { TaskService } from '../services/task.service';
 export class TaskComponent implements OnInit {
   
   @Input() task!: TaskDeskModel;
-  taskForm!: FormGroup;
-  usrList: string = ""
+  usrList: string = "";
+  isModalOpen = false;
 
   constructor(
-    private fb: FormBuilder,
-    private service: TaskService
+    private service: TaskService,
+    public modal: ModalService
   ){}
 
   ngOnInit() {
@@ -54,4 +54,19 @@ export class TaskComponent implements OnInit {
     this.service.delData(this.task.id).subscribe()
     window.location.reload()
   }
+
+  editTask(){
+    this.isModalOpen = true;
+    // this.modal.open()
+  }
+
+  closeModal(isValid: boolean){
+    this.isModalOpen = false;
+  }
+  // reloadTask(isValid: boolean){
+  //   console.log(isValid);
+    
+  //   if(isValid)
+  //     window.location.reload() 
+  // }
 }

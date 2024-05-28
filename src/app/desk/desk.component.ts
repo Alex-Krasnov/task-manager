@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DeskModel } from '../_interfaces/desk.model';
 import { first, firstValueFrom } from 'rxjs';
 import { TaskDeskModel } from '../_interfaces/task-desk.model';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'app-desk',
@@ -20,7 +21,8 @@ export class DeskComponent implements OnInit{
 
   constructor(
     private service: DeskService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public modal: ModalService
   ){}
 
   ngOnInit(){
@@ -44,5 +46,16 @@ export class DeskComponent implements OnInit{
           break;
       }
     })
+  }
+
+  openNewTask(){
+    this.modal.openNewTask()
+  }
+
+  reloadTask(isValid: boolean){
+    console.log(isValid);
+    
+    if(isValid)
+      window.location.reload() 
   }
 }

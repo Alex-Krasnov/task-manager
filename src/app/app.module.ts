@@ -16,6 +16,8 @@ import { HomeDesksComponent } from './home-desks/home-desks.component';
 import { HomeTasksComponent } from './home-tasks/home-tasks.component';
 import { DeskComponent } from './desk/desk.component';
 import { TaskComponent } from './task/task.component';
+import { ModalComponent } from './modal/modal.component';
+import { TaskModalComponent } from './task-modal/task-modal.component';
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -30,7 +32,9 @@ export function tokenGetter() {
     HomeDesksComponent,
     HomeTasksComponent,
     DeskComponent,
-    TaskComponent
+    TaskComponent,
+    ModalComponent,
+    TaskModalComponent
   ],
   imports: [
     BrowserModule,

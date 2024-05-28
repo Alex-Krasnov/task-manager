@@ -9,5 +9,5 @@ export interface TaskDeskModel {
   status_id: number;
   creation_date: Date;
   deadline: Date;
-  users_list: UserTaskModel[]
+  users_list: UserTaskModel[];
 }
