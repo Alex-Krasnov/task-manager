@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TaskDeskModel } from '../_interfaces/task-desk.model';
 import { TaskService } from '../services/task.service';
 import { ModalService } from '../services/modal.service';
-import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserTaskModel } from '../_interfaces/user-task.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { first, firstValueFrom } from 'rxjs';
@@ -61,11 +61,20 @@ export class TaskModalComponent implements OnInit {
     this.taskForm = this.fb.group({
       id: new FormControl(this.task.id, { updateOn: 'blur' }),
       desk_id: new FormControl(this.task.desk_id, { updateOn: 'blur' }),
-      task_name: new FormControl(this.task.task_name, { updateOn: 'blur' }),
-      description: new FormControl(this.task.description, { updateOn: 'blur' }),
+      task_name: new FormControl(this.task.task_name,{
+        validators: [Validators.required],
+        updateOn: 'blur'
+      }),
+      description: new FormControl(this.task.description,{
+        validators: [Validators.required],
+        updateOn: 'blur'
+      }),
       creator_id: new FormControl(this.task.creator_id, { updateOn: 'blur' }),
       status_id: new FormControl(this.task.status_id, { updateOn: 'blur' }),
-      creation_date: new FormControl(this.task.creation_date, { updateOn: 'blur' }),
+      creation_date: new FormControl(this.task.creation_date,{
+        validators: [Validators.required],
+        updateOn: 'blur'
+      }),
       deadline: new FormControl(this.task.deadline, { updateOn: 'blur' }),
       newName: new FormControl(null, { updateOn: 'blur' }),
       userList: this.fb.array(

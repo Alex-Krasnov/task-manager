@@ -11,3 +11,15 @@
     --bs-border-color: #5f8d84;
     border-radius: 0.3rem;
 }
+
+input.ng-invalid,
+textarea.ng-invalid{
+    border-color: red;
+    border-width: 2px;
+}
+ 
+input.ng-dirty,
+textarea.ng-dirty{
+    border-color: rgb(9, 212, 2);
+    border-width: 2px;
+}
