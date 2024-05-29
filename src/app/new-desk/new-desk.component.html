@@ -1,0 +1,31 @@
+<form style="width: 1000px;" class="mx-auto modal-content p-1" [formGroup]="deskForm">
+    <div class="row border m-1">
+        <div class="row mt-1">
+            <div class="col-xl-2">
+                <label class="mt-2">Название</label>
+            </div>
+            <div class="col-xl">
+                <input type="text" class="form-control" placeholder="Название" formControlName="desk_name">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-xl-2">
+                <label class="mt-2">Код приглашения</label>
+            </div>
+            <div class="col-xl">
+                <input type="text" class="form-control" placeholder="Код приглашения" formControlName="invite_code">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-xl-2">
+                <label class="mt-2">Описание</label>
+            </div>
+            <div class="col-xl">
+                <textarea class="form-control" rows="2" formControlName="description"></textarea>
+            </div>
+        </div>
+        <div class="row m-2">
+            <button class="btn btn-outline-success" (click)="create()">Сохранить</button>
+        </div>
+    </div>
+</form>

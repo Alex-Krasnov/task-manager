@@ -1,7 +1,7 @@
 <div class="row h-100 m-0 p-0" style="background-color: black;">
     <div class="col-auto m-0 pe-1">
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100" style="width: 250px;">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <a [routerLink]="['/main/home']" routerLinkActive="disabled" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                 <span class="fs-4">Task Manager</span>
             </a>
@@ -10,33 +10,22 @@
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" [routerLink]="['/main/home']" routerLinkActive="disabled">
                     <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                    Home
+                    Гл. страница
                 </a>
                 </li>
                 <li>
-                <a class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                    Dashboard
-                </a>
+                    <a class="nav-link link-body-emphasis" (click)="modal.openNewDesk()">
+                        <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                        Создать доску
+                    </a>
                 </li>
                 <li>
-                <a class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                    Orders
-                </a>
+                    <a class="nav-link link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                        Адм. пользователей
+                    </a>
                 </li>
                 <li>
-                <a class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                    Products
-                </a>
-                </li>
-                <li>
-                <a class="nav-link link-body-emphasis">
-                    <svg class="bi pe-none me-2" width="16" height="16"></svg>
-                    Customers
-                </a>
-                </li>
             </ul>
             <hr>
             <div class="dropdown">
@@ -59,3 +48,7 @@
         <router-outlet></router-outlet>
     </div>
 </div>
+
+<app-modal *ngIf="modal.newDeskIsVisible$ | async">
+    <app-new-desk></app-new-desk>
+</app-modal>

@@ -149,7 +149,6 @@ export class TaskModalComponent implements OnInit {
   }
 
   async saveExit(){
-    console.log(this.isCreate);
     
     if(this.isCreate){
       this.updData()

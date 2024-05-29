@@ -32,13 +32,13 @@ export class DeskService {
   };
 
   createData(item: DeskModel){
-    return this.http.post<DeskModel>(`${this.url}/desk/${item.id}`,{
-      id: item.id,
+    return this.http.post<DeskModel>(`${this.url}/desk/create`,{
+      // id: item.id,
       desk_name: item.desk_name,
       invite_code: item.invite_code,
       admin_id: item.admin_id,
-      description: item.description,
-      tasks_list: item.tasks_list
+      description: item.description//,
+      // tasks_list: item.tasks_list
     });
   };
 }

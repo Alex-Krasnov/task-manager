@@ -18,6 +18,9 @@ import { DeskComponent } from './desk/desk.component';
 import { TaskComponent } from './task/task.component';
 import { ModalComponent } from './modal/modal.component';
 import { TaskModalComponent } from './task-modal/task-modal.component';
+import { NewDeskComponent } from './new-desk/new-desk.component';
+import { ModalErrComponent } from './modal-err/modal-err.component';
+import { UserAdmComponent } from './user-adm/user-adm.component';
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -34,7 +37,10 @@ export function tokenGetter() {
     DeskComponent,
     TaskComponent,
     ModalComponent,
-    TaskModalComponent
+    TaskModalComponent,
+    NewDeskComponent,
+    ModalErrComponent,
+    UserAdmComponent
   ],
   imports: [
     BrowserModule,
