@@ -40,4 +40,8 @@ export class UserService {
       role: item.role
     });
   };
+
+  logOut(){
+    return this.http.get(`${this.url}/logout`);
+  }
 }
